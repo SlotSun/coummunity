@@ -1,6 +1,7 @@
 package life.slot.community.controller;
 
 import life.slot.community.dto.AccessTokenDTO;
+import life.slot.community.dto.GithubUser;
 import life.slot.community.provider.GithubProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +15,7 @@ public class AuthorizeController {
     private GithubProvider githubProvider;
 
     @GetMapping("/callback")
-    public String callback(@RequestParam(name="code") String code,@RequestParam(name="state") String state){
+    public String callback(@RequestParam(name = "code") String code, @RequestParam(name = "state") String state) {
 
         AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
         accessTokenDTO.setCode(code);
@@ -22,7 +23,9 @@ public class AuthorizeController {
         accessTokenDTO.setClient_secret("099ad3d55b333fdaecb95a6795260e537bb59ba9");
         accessTokenDTO.setRedirect_uri("http://localhost:8080/callback");
         accessTokenDTO.setState(state);
-        githubProvider.getAccessToken(accessTokenDTO);
+        String accessToken = githubProvider.getAccessToken(accessTokenDTO);
+        GithubUser user = githubProvider.getUser(accessToken);
+        System.out.println(user.getName());
         return "index";
     }
 }
