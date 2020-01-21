@@ -10,3 +10,16 @@
 [Spring文档](https://docs.spring.io/spring-boot/docs/2.1.0.RC1/reference/htmlsingle/#boot-features-nosql)       
 
 ##工具    
+
+##脚本
+```sql
+create table user 
+(  
+  id int Auto_increment primary key not null,
+  account_id varchar(100),
+  name varchar(50),
+  token varchar(36),
+  gmt_create bigint,
+  gmt_modified bitint
+) 
+```
