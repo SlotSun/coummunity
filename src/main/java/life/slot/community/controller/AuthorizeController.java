@@ -19,10 +19,10 @@ import java.util.UUID;
 @Controller
 public class AuthorizeController {
 
-    @Autowired
+    @Autowired(required = false)
     private GithubProvider githubProvider;
 
-    @Autowired
+    @Autowired(required = false)
     private UserMapper userMapper;
 
     @Value("${github.client.id}")
@@ -68,4 +68,5 @@ public class AuthorizeController {
             //登录失败
         }
     }
+
 }
