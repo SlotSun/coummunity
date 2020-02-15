@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th = "http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title>发布-社区</title>
@@ -55,17 +55,20 @@
             <form action="/publish" method="post">
                 <div class="form-group">
                     <label for="title">问题标题（简明扼要）</label>
-                    <input type="text" class="form-control" th:value="${title}" id="title" name="title" placeholder="问题标题......">
+                    <input type="text" class="form-control" th:value="${title}" id="title" name="title"
+                           placeholder="问题标题......">
                 </div>
 
                 <div class="form-group">
                     <label for="description">问题补充（简明扼要）</label>
-                    <textarea name="description" th:text="${description}" id="description" class="form-control" cols="30" rows="10"></textarea>
+                    <textarea name="description" th:text="${description}" id="description" class="form-control"
+                              cols="30" rows="10"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="tag">添加标签：</label>
-                    <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag" placeholder="输入标签，以，隔开">
+                    <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag"
+                           placeholder="输入标签，以，隔开">
                 </div>
 
                 <div class="alert alert-danger" th:text="${error}" th:if="${error != null}"></div>

@@ -1,9 +1,7 @@
 package life.slot.community.controller;
 
 import life.slot.community.dto.QuestionDTO;
-import life.slot.community.mapper.QuestionMapper;
 import life.slot.community.mapper.UserMapper;
-import life.slot.community.model.Question;
 import life.slot.community.model.User;
 import life.slot.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +26,7 @@ public class IndexController {
     public String index(HttpServletRequest request,
                         Model model) {
         Cookie[] cookies = request.getCookies();
-        if (cookies!=null) {
+        if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals("token")) {
                     String token = cookie.getValue();
@@ -41,8 +39,8 @@ public class IndexController {
             }
         }
 
-        List<QuestionDTO> questionsList =questionService.list();
-        model.addAttribute("questions",questionsList);
+        List<QuestionDTO> questionsList = questionService.list();
+        model.addAttribute("questions", questionsList);
         return "index";
     }
 }

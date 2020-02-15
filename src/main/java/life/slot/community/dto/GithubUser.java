@@ -8,8 +8,9 @@ public class GithubUser {
     private long id;
     private String bio;
     private String avatar_url;
+
     @Override
-    public String toString(){
-        return "GithubUser{"+ "name='"+ name + '\'' +",id ="+id+",bio = '"+ bio +'\''+'}';
+    public String toString() {
+        return "GithubUser{" + "name='" + name + '\'' + ",id =" + id + ",bio = '" + bio + '\'' + '}';
     }
 }
