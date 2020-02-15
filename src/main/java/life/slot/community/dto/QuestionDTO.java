@@ -1,9 +1,13 @@
-package life.slot.community.model;
+package life.slot.community.dto;
 
+import life.slot.community.model.User;
 import lombok.Data;
 
+/**
+ * Create by slot on 2020-02-15
+ */
 @Data
-public class Question {
+public class QuestionDTO {
     private String id;
     private String title;
     private String description;
@@ -13,6 +17,5 @@ public class Question {
     private Integer creator;
     private Integer commentCount;
     private Integer viewCount;
-    private Integer likeCount;
-
+    private User user;
 }
