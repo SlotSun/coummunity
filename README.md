@@ -12,6 +12,7 @@
 ## 工具    
 [git](https://git-scm.com/)
 [lombok](https://projectlombok.org/features/all)
+[jQuery](https://jquery.com/)
 ## 脚本
 ```sql
 create table user 
