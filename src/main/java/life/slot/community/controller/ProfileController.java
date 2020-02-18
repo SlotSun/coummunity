@@ -1,5 +1,6 @@
 package life.slot.community.controller;
 
+import life.slot.community.dto.PaginationDTO;
 import life.slot.community.mapper.UserMapper;
 import life.slot.community.model.User;
 import life.slot.community.service.QuestionService;
@@ -57,7 +58,8 @@ public class ProfileController {
             model.addAttribute("sectionName", "最新回复");
         }
 
-        questionService.list(user.getId(),page,size);
+        PaginationDTO paginationDTO = questionService.list(user.getId(), page, size);
+        model.addAttribute("pagination", paginationDTO);
         return "profile";
     }
 }
