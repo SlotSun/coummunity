@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * Create by slot on 2020-02-18
+ */
+
 @Controller
 public class IndexController {
 
