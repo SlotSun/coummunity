@@ -1,7 +1,6 @@
 package life.slot.community.controller;
 
 import life.slot.community.dto.PaginationDTO;
-import life.slot.community.dto.QuestionDTO;
 import life.slot.community.mapper.UserMapper;
 import life.slot.community.model.User;
 import life.slot.community.service.QuestionService;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 @Controller
 public class IndexController {
